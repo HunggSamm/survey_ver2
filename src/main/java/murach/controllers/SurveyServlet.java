@@ -15,7 +15,6 @@ public class SurveyServlet extends HttpServlet {
                           HttpServletResponse response)
             throws ServletException, IOException {
 
-        // get parameters from the request
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
         String email = request.getParameter("email");
@@ -23,7 +22,6 @@ public class SurveyServlet extends HttpServlet {
         String wantsUpdates = request.getParameter("wantsUpdates");
         String contactVia = request.getParameter("contactVia");
 
-        // process paramters
         if (heardFrom == null) {
             heardFrom = "NA";
         }
@@ -34,7 +32,6 @@ public class SurveyServlet extends HttpServlet {
             wantsUpdates = "Yes";
         }
 
-        // store data in User object
         User user = new User();
         user.setFirstName(firstName);
         user.setLastName(lastName);
@@ -43,10 +40,8 @@ public class SurveyServlet extends HttpServlet {
         user.setWantsUpdates(wantsUpdates);
         user.setContactVia(contactVia);
 
-        // store User object in request
         request.setAttribute("user", user);
 
-        // forward request to JSP
         String url = "/survey.jsp";
         getServletContext()
                 .getRequestDispatcher(url)
