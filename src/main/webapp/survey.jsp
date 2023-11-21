@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,7 +29,6 @@
         <span>${user.contactVia}</span>
     </c:if>
 </div>
-
 
 <input style="margin-top: 10px;margin-left: -113px" type="button" value="Return" onclick="window.location.href='index.html';">
 </body>

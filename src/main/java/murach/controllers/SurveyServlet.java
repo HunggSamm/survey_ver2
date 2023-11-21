@@ -14,6 +14,9 @@ public class SurveyServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request,
                           HttpServletResponse response)
             throws ServletException, IOException {
+        response.setContentType("text/html");
+        response.setCharacterEncoding("UTF-8");
+        request.setCharacterEncoding("UTF-8");
 
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
